@@ -2,7 +2,12 @@
 # from nltk.stem.lancaster import LancasterStemmer
 # stemmer = LancasterStemmer()
 
-print("Hello World")
+from flask import Flask
+app = Flask(__name__)
+
+@app.route("/")
+def hello():
+    return "Hello World!"
 
 
 # import numpy
@@ -131,16 +136,3 @@ print("Hello World")
 # 			print(rsp)
 
 # chat()
-
-
-
-
-
-
-
-
-
-
-
-
-
