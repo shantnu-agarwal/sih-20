@@ -31,13 +31,13 @@
         },
         {"tag": "rice cost",
          "patterns": ["what is the cost of rice", "rice cost", "price of rice"],
-         "responses": ["10"],
+         "responses": ["rice"],
          "context_set": ""
         },
         {"tag": "potato cost",
          "patterns": ["what is the cost of potato", "potato cost", "price of potato"],
          "responses": ["11"],
-         "context_set": ""
+         "context_set": "potato"
         }
    ]
 }
