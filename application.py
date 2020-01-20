@@ -84,4 +84,4 @@ def hello():
 # 		return render_template("bot.html",error=reply)
 
 # print("All prerequisites passed. Starting application now.")
-app.run()
+# app.run()
