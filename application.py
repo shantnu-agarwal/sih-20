@@ -76,12 +76,12 @@ app = Flask(__name__)
 def hello():
 	return "Hello World!"
 
-@app.route("/userinput",methods = ['POST'])
-def userinput():
-	if request.method == 'POST':
-		user = request.form['nm']
-		reply = chat(user)
-		return render_template("bot.html",error=reply)
+# @app.route("/userinput",methods = ['POST'])
+# def userinput():
+# 	if request.method == 'POST':
+# 		user = request.form['nm']
+# 		reply = chat(user)
+# 		return render_template("bot.html",error=reply)
 
-print("All prerequisites passed. Starting application now.")
-app.run(host="0.0.0.0"
+# print("All prerequisites passed. Starting application now.")
+app.run()
