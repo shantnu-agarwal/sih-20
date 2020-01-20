@@ -6,8 +6,8 @@ from flask import Flask
 
 
 import numpy
-import tflearn
 import tensorflow
+import tflearn
 import random
 import json
 import pickle 
@@ -30,7 +30,7 @@ try:
 	with open("data.pickle","rb") as f:
 		words, labels, training, output = pickle.load(f)
 
-except:	
+except:
 	words = []
 	labels = []
 	docs_x = []
@@ -92,7 +92,7 @@ model = tflearn.DNN(net)
 
 try:
 	model.load("model.tflearn")
-except:	
+except:
 	model.fit(training, output, n_epoch=1000, batch_size=8, show_metric=True)
 	model.save("model.tflearn")
 def bag_of_words(s, words):
