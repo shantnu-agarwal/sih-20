@@ -60,6 +60,7 @@ def chat(inp):
 	print(type(rsp))
 	print(rsp)
 	if rsp=="rice" or rsp=="potato":
+		print("Starting the connection with Azure SQL")
 		cnx = mysql.connector.connect(user="astroller27@kisaan2020", password="WeGotThis101", host="kisaan2020.mysql.database.azure.com", port=3306, database="world")
 		# print(cnx)
 		curs = cnx.cursor()
