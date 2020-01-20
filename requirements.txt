@@ -1,5 +1,0 @@
-nltk
-numpy
-tensorflow==1.13.1
-tflearn
-mysql-connector
