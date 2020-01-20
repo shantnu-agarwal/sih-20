@@ -84,4 +84,4 @@ def userinput():
 		return render_template("bot.html",error=reply)
 
 print("All prerequisites passed. Starting application now.")
-app.run()
+app.run(host="0.0.0.0",port=80)
