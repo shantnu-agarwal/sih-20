@@ -1,0 +1,243 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": [
+        "Hi",
+        "How are you",
+        "Is anyone there?",
+        "Hello",
+        "Good day",
+        "Whats up"
+      ],
+      "responses": [
+        "Hello!",
+        "Good to see you again!",
+        "Hi there, how can I help?"
+      ],
+      "context_set": ""
+    },
+    {
+      "tag": "arhar",
+      "patterns": [
+        "what is the cost of arhar",
+        "arhar cost",
+        "price of arhar",
+        "what is the cost of tur",
+        "tur cost",
+        "price of tur",
+        "what is the cost of toor",
+        "toor cost",
+        "price of toor"
+      ],
+      "responses": [
+        "tur"
+      ],
+      "context_set": ""
+    },
+    {
+      "tag": "bajra",
+      "patterns": [
+        "what is the cost of bajra",
+        "bajra cost",
+        "price of bajra"
+      ],
+      "responses": [
+        "bajra"
+      ],
+      "context_set": ""
+    },
+    {
+      "tag": "coconut",
+      "patterns": [
+        "what is the cost of coconut",
+        "coconut cost",
+        "price of coconut"
+      ],
+      "responses": [
+        "coconut"
+      ],
+      "context_set": ""
+    },
+    {
+      "tag": "cotton",
+      "patterns": [
+        "what is the cost of cotton",
+        "cotton cost",
+        "price of cotton"
+      ],
+      "responses": [
+        "cotton"
+      ],
+      "context_set": ""
+    },
+    {
+      "tag": "groundnut",
+      "patterns": [
+        "what is the cost of groundnut",
+        "groundnut cost",
+        "price of groundnut"
+      ],
+      "responses": [
+        "groundnut"
+      ],
+      "context_set": ""
+    },
+    {
+      "tag": "jowar",
+      "patterns": [
+        "what is the cost of jowar",
+        "jowar cost",
+        "price of jowar"
+      ],
+      "responses": [
+        "jowar"
+      ],
+      "context_set": ""
+    },
+    {
+      "tag": "maize",
+      "patterns": [
+        "what is the cost of maize",
+        "maize cost",
+        "price of maize"
+      ],
+      "responses": [
+        "maize"
+      ],
+      "context_set": ""
+    },
+    {
+      "tag": "moong",
+      "patterns": [
+        "what is the cost of moong",
+        "moong cost",
+        "price of moong"
+      ],
+      "responses": [
+        "moong"
+      ],
+      "context_set": ""
+    },
+    {
+      "tag": "niger",
+      "patterns": [
+        "what is the cost of niger seed",
+        "niger seed cost",
+        "price of niger seed"
+      ],
+      "responses": [
+        "niger seed"
+      ],
+      "context_set": ""
+    },
+    {
+      "tag": "paddy",
+      "patterns": [
+        "what is the cost of paddy",
+        "paddy cost",
+        "price of paddy"
+      ],
+      "responses": [
+        "paddy"
+      ],
+      "context_set": ""
+    },
+    {
+      "tag": "ragi",
+      "patterns": [
+        "what is the cost of ragi",
+        "ragi cost",
+        "price of ragi"
+      ],
+      "responses": [
+        "ragi"
+      ],
+      "context_set": ""
+    },
+    {
+      "tag": "rice",
+      "patterns": [
+        "what is the cost of rice",
+        "rice cost",
+        "price of rice"
+      ],
+      "responses": [
+        "rice"
+      ],
+      "context_set": ""
+    },
+    {
+      "tag": "sesamum",
+      "patterns": [
+        "what is the cost of sesamum",
+        "sesamum cost",
+        "price of sesamum"
+      ],
+      "responses": [
+        "sesamum"
+      ],
+      "context_set": ""
+    },
+    {
+      "tag": "soybean",
+      "patterns": [
+        "what is the cost of soybean",
+        "soybean cost",
+        "price of soybean"
+      ],
+      "responses": [
+        "soybean"
+      ],
+      "context_set": ""
+    },
+    {
+      "tag": "sugarcane",
+      "patterns": [
+        "what is the cost of sugarcane",
+        "sugarcane cost",
+        "price of sugarcane"
+      ],
+      "responses": [
+        "sugarcane"
+      ],
+      "context_set": ""
+    },
+    {
+      "tag": "sunflower",
+      "patterns": [
+        "what is the cost of sunflower",
+        "sunflower cost",
+        "price of sunflower"
+      ],
+      "responses": [
+        "sunflower"
+      ],
+      "context_set": ""
+    },
+    {
+      "tag": "urad",
+      "patterns": [
+        "what is the cost of urad",
+        "urad cost",
+        "price of urad"
+      ],
+      "responses": [
+        "urad"
+      ],
+      "context_set": ""
+    },
+    {
+      "tag": "wheat",
+      "patterns": [
+        "what is the cost of wheat",
+        "wheat cost",
+        "price of wheat"
+      ],
+      "responses": [
+        "wheat"
+      ],
+      "context_set": ""
+    }
+  ]
+}
