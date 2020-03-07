@@ -1,5 +1,5 @@
 nltk
 numpy
-tensorflow==1.13.1
+tensorflow==1.15.2
 tflearn
 mysql-connector
