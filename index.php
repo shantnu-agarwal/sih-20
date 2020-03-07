@@ -19,7 +19,7 @@ echo '<!doctype html>
   <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <link rel="stylesheet" href="style/index.css" />
-  <script src="js/cities.js"></script>
+  <script src="js/cities.js"></script> 
 </head>
 <body>
 
@@ -38,18 +38,9 @@ echo '<!doctype html>
     <li class="nav-item">
       <a class="nav-link" href="pesticides.php">Pesticides</a>
     </li>
-    <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Helpers
-      </a>
-      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-      <a class="dropdown-item" href="govt.php">Government Agencies</a>
-      <a class="dropdown-item" href="ngo.php">NGOs</a>
-      <a class="dropdown-item" href="chemical.php">Chemical Factories</a>
-      </li>';
-        
-        if(isset($_SESSION['phone'])){
-            echo'<li class="nav-item"><a class="nav-link" href="loan.php">Loan</a></li>';}
+    <li class="nav-item">
+      <a class="nav-link" href="ngo.php">NGOs</a>
+    </li>';
               if(isset($_SESSION['phone'])){
                 echo '<li class="nav-item"><a class="nav-link" href="account.php">My Account</a></li>';
                 echo '<li class="nav-item"><a class="nav-link" href="logout.php">Log Out</a></li>';
@@ -58,17 +49,21 @@ echo '<!doctype html>
                 echo '<li class="nav-item"><a class="nav-link" href="login.php">Log In</a></li>';
                 echo '<li class="nav-item"><a class="nav-link" href="register.php">Register</a></li>';
               }
+              if(isset($_SESSION['phone'])=="9999999999"){
+                echo '<li class="nav-item"><a class="nav-link" href="announcement.php">Send Alert</a></li>';
+              }
             echo '</ul>';
           echo '</div>';
         echo'</nav>';
     ?>
 
 
-
+<iframe src="http://127.0.0.1:5000/userinput" class="bot"></iframe>
 <?php
 $apiKey = "e01c6e2b3f0163501998a65c5903e812";
 $cityId = "1264527";
 $googleApiUrl = "http://api.openweathermap.org/data/2.5/weather?id=" . $cityId . "&lang=en&units=metric&APPID=" . $apiKey;
+
 
 $ch = curl_init();
 
@@ -104,6 +99,127 @@ $currentTime = time();
         </div>
     </div>
 
+    <iframe src="http://127.0.0.1:5000/userinput" class="bot"></iframe>
+
+
+
+
+
+
+
+      <?php
+    
+    
+    if(isset($_POST["submit"]))
+{
+
+
+
+
+
+  $state=$_POST["stt"];
+
+  $dist=$_POST["dist"];
+  $budget=$_POST["budget"];
+  $season=$_POST["season"];
+  $land=$_POST["land"];
+
+  $file_open = fopen("data.csv", "a");
+  $no_rows = count(file("data.csv"));
+  if($no_rows > 1)
+  {
+   $no_rows = ($no_rows - 1) + 1;
+  }
+  $form_data = array(
+   'sr_no'  => $no_rows,
+   'state'  => $state,
+   'district'  => $dist,
+   'budget' => $budget,
+   'season' => $season,
+   'land' => $land
+  );
+  fputcsv($file_open, $form_data);
+
+
+
+  
+// $stmt = $mysqli->prepare("SELECT * from dataofcrops WHERE State_Name='$state' AND  District_Name='$dist' AND  Season='$season'");
+// $stmt->bind_param('sss', $Crop,$);
+// $stmt->execute();
+
+// $data = $stmt->get_result();
+
+// while($row=mysqli_fetch_array($data)){
+//     echo htmlspecialchars($row['name']);
+//     echo htmlspecialchars($row['lname']);
+//     echo htmlspecialchars($row['department']);
+// }
+
+
+// $query = "SELECT * from dataofcrops WHERE State_Name='$state' AND  District_Name='$dist' AND  Season='$season'";
+// $data=mysqli_query($mysqli,$query);   
+
+// while($row=mysqli_fetch_array($data)){
+//   echo $row['name'];
+//   echo $row['lname'];
+//   echo $row['department'];
+// }
+// ini_set('display_errors', 1); ini_set('display_startup_errors', 1); error_reporting(E_ALL);
+//   $result = $mysqli->query("SELECT * from dataofcrops WHERE State_Name='$state' AND  District_Name='$dist' AND  Season='$season'");
+//   if($result) {
+//       echo "LOL";
+//       $haha=$result->fetch_object();
+//       echo '<p>'.$haha['State_Name'].'</p>';  
+//       echo '<p>'.$haha['Season'].'</p>';
+//       echo "OK";
+//   }
+//   else {
+//       echo "TRY AGAIN";
+  
+// }
+$result = $mysqli->query("SELECT * from dataofcrops WHERE State_Name=? AND  District_Name=? AND  Season=?");
+$result->bind_param('sss',$state,$dist,$season);
+$result->execute();
+$done=$result->get_result();
+while($haha= $done->fetch_assoc()){
+        echo '<p>'.$haha['State_Name'].'</p>';  
+        echo '<p>'.$haha['Season'].'</p>';
+        echo '<p>'.$haha['State_Name'].'</p>';
+        echo "OK";
+       }
+  // echo $haha;
+  // $hahaha=$haha->Crop;
+  // echo $hahaha;
+
+
+// if (!$result) {
+//     echo 'Could not run query: ' . mysql_error();
+//     exit;
+// }
+// $row = mysqli_fetch_row($result);
+
+// echo $row[3]; 
+
+}
+?>
+
+  <!-- // State_Name,District_Name,Crop_Year,Season,Crop,Area,Production,prodarea,max_prodarea
+
+  // $sql = "SELECT * from dataofcrops WHERE State_Name='$state' AND  District_Name='$dist' AND  Season='$season'";
+
+  // $query1 = mysql_query("SELECT * from dataofcrops WHERE State_Name='$state' AND  District_Name='$dist' AND  Season='$season'", $connection);
+  // $ar=$mysqli->query("SELECT * from dataofcrops WHERE State_Name='$state', District_Name='$dist', Season='$season'");
+  // $result = $conn->query($sql);
+  // if ($result->num_rows > 0) {
+
+//     while($row = $result->fetch_assoc()) {
+//         echo "Season: " . $row["Season"]. " - State: " . $row["State_Name"]. " " . $row["District_Name"]. "<br>";
+//     }
+// } else {
+//     echo "0 results";
+// }
+//  } -->
+
 
 
     <div class="container">
@@ -111,42 +227,33 @@ $currentTime = time();
     <p class="text-muted text-center" style="margin-bottom:2em">Fill in the provided fields and we will give you a crop best suited for you.</p>
     <div class="row">
       <div class="col">
-    <form>
+    <form action="" method="POST">
     <div class="form-row">
     <select onchange="print_city('state', this.selectedIndex);" id="sts" name ="stt" class="form-control col-md-6" required></select>
-<select id ="state" class="form-control col-md-6" required></select>
+<select id ="state" class="form-control col-md-6" name="dist" required></select>
 <script language="javascript">print_state("sts");</script>
-  <!-- <div class="form-group col-md-6">
-    <label for="state">State</label>
-    <input type="text" class="form-control" id="state" aria-describedby="emailHelp">
-  </div>
-  <div class="form-group col-md-6">
-    <label for="district">District</label>
-    <input type="text" class="form-control" id="district" aria-describedby="emailHelp">
-  </div> -->
             </div>
   <div class="form-group">
     <label for="budget">Budget</label>
-    <input type="text" class="form-control" id="budget" aria-describedby="emailHelp">
+    <input type="text" name="budget" class="form-control" id="budget" aria-describedby="emailHelp">
   </div>
   <div class="form-row">
   <div class="form-group col-md-6">
       <label for="season">Season</label>
-      <select id="season" class="form-control">
+      <select id="season" name="season" class="form-control">
         <option selected>Choose...</option>
-        <option >Rabi</option>
-        <option >Kharrif</option>
-        <option >Summer</option>
-        <option >All Year</option>
-        
+        <option name="season">Rabi</option>
+        <option name="season">Kharif</option>
+        <option name="season">Summer</option>
+        <option name="season">All Year</option>
       </select>
     </div>
     <div class="form-group col-md-6">
     <label for="landsize">Land Size</label>
-    <input type="text" class="form-control" id="landsize" aria-describedby="emailHelp">
+    <input type="text" class="form-control" id="landsize" name="land" aria-describedby="emailHelp">
   </div>
             </div>
-  <button type="submit" class="btn btn-primary">Get Crop Suggestion!</button>
+  <button type="submit" class="btn btn-primary" name="submit">Get Crop Suggestion!</button>
 </form>
 </div>
 <div class="col"></div>

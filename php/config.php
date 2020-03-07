@@ -2,10 +2,10 @@
 error_reporting(E_ERROR | E_PARSE);
 
 $connected_successfully = false; // Flag for successfull connection.
-$database_name = 'sih';        // Name of the database.
-$hostname = 'localhost';         // IP Adddress of server in our case just localhost as the server is hosted on a local machine.
-$username = 'root';              // username for the database user.
-$password = '';// password for the user.
+$database_name = 'world';        // Name of the database.
+$hostname = 'kisaan2020.mysql.database.azure.com';         // IP Adddress of server in our case just localhost as the server is hosted on a local machine.
+$username = 'astroller27@kisaan2020';              // username for the database user.
+$password = 'WeGotThis101';// password for the user.
 $currency = 'Rs: ';
 
 

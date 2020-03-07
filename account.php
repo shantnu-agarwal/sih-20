@@ -34,18 +34,9 @@ echo '<!doctype html>
       <li class="nav-item">
         <a class="nav-link" href="pesticides.php">Pesticides</a>
       </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Helpers
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-        <a class="dropdown-item" href="govt.php">Government Agencies</a>
-        <a class="dropdown-item" href="ngo.php">NGOs</a>
-        <a class="dropdown-item" href="chemical.php">Chemical Factories</a>
-        </li>';
-        
-        if(isset($_SESSION['phone'])){
-            echo'<li class="nav-item"><a class="nav-link" href="loan.php">Loan</a></li>';}
+      <li class="nav-item">
+        <a class="nav-link" href="ngo.php">NGOs</a>
+      </li>';
               if(isset($_SESSION['phone'])){
                 echo '<li class="nav-item active"><a class="nav-link" href="account.php">My Account</a></li>';
                 echo '<li class="nav-item"><a class="nav-link" href="logout.php">Log Out</a></li>';
@@ -53,6 +44,9 @@ echo '<!doctype html>
               else{
                 echo '<li class="nav-item"><a class="nav-link" href="login.php">Log In</a></li>';
                 echo '<li class="nav-item"><a class="nav-link" href="register.php">Register</a></li>';
+              }
+              if($_SESSION['phone']==="9999999999"){
+                echo '<li class="nav-item"><a class="nav-link" href="announcement.php">Send Alert</a></li>';
               }
             echo '</ul>';
           echo '</div>';
